@@ -21,6 +21,8 @@ namespace booksApi.Models
         [StringLength(2000, MinimumLength = 50, ErrorMessage = "The HeadLine should range btwn 10-100 characters")]
         public string ReviewText { get; set; }
 
+        [Required]
+        [Range(1,5,ErrorMessage ="Rating must be a range between 1-5 number;")]
         public int Ratings { get; set; }
         public virtual Reviewer Reviewer { get; set; }
         public virtual Book Book { get; set; }

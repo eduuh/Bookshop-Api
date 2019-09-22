@@ -14,11 +14,11 @@ namespace booksApi.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100,ErrorMessage ="The Name should not exceed 100 characters")]
+        [StringLength(100,ErrorMessage ="The FirstName should not exceed 100 characters")]
         public string Firstname { get; set; }
 
         [Required]
-        [StringLength(200, ErrorMessage = "The Name should not exceed 200 characters")]
+        [StringLength(200, ErrorMessage = "The LastName should not exceed 200 characters")]
         public string Lastname { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
 
