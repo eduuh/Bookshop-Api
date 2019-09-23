@@ -22,7 +22,7 @@ namespace booksApi.Models
         public string Title { get; set; }
 
      
-        public DateTime? DateTime { get; set; }
+        public DateTime? DatePublished { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public virtual ICollection<BookAuthor> BookAuthors { get; set; }
         public ICollection<BookCategory> BookCategories { get; set; }

@@ -15,7 +15,7 @@ namespace booksApi.Models
 
         [Required]
         [StringLength(50,ErrorMessage ="Category name should be less than 50 chars")]
-        public int Name { get; set; }
+        public string Name { get; set; }
         public ICollection<BookCategory> BookCategories { get; set; }
     }
 }

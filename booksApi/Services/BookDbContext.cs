@@ -10,6 +10,10 @@ namespace booksApi.Services
 {
     public class BookDbContext  : DbContext
     {
+        public BookDbContext()
+        {
+
+        }
         public BookDbContext(DbContextOptions<BookDbContext> options): base(options)
         {
             Database.Migrate();

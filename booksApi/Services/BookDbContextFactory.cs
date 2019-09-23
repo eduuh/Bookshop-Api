@@ -14,21 +14,12 @@ namespace booksApi.Services
 
         private static IConfiguration configuration { get; set; }
         
-        public BookDbContextFactory()
-        {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-             
-        }
+       
         public BookDbContext CreateDbContext(string[] args)
         {
-            var  connectionstring = configuration.GetConnectionString("bookDbConnectionString");
+            //var  connectionstring = configuration.GetConnectionString("bookDbConnectionString");       
             var optionbuilder = new DbContextOptionsBuilder<BookDbContext>();
-            //var connectionstring = "Server=(localdb)\\mssqllocaldb;Database=BookApiProject;Trusted_Connection=True;"; 
-            
-
-
+            var connectionstring = "Server=(localdb)\\mssqllocaldb;Database=BookApiProject;Trusted_Connection=True;"; 
             optionbuilder.UseSqlServer(connectionstring);
             return new BookDbContext(optionbuilder.Options);
         }
