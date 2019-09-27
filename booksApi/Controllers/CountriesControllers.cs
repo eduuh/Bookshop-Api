@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using booksApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace booksApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/api/[controller]")]
     [ApiController]
-    public class CountriesControllers: Controller
+    public class CountriesController: ControllerBase
     {
         private ICountryRepository _countryRepository;
 
-        public CountriesControllers(ICountryRepository countryRepository)
+        public CountriesController(ICountryRepository countryRepository)
         {
             _countryRepository = countryRepository;
         }
