@@ -38,7 +38,7 @@ namespace booksApi
             }
 
             //context.SeedDataContext()
-            app.Run(async (t) => { await t.Response.WriteAsync("hello world"); });
+            app.UseMvcWithDefaultRoute();
             app.UseMvc();
 
         }
