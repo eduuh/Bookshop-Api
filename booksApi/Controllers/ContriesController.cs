@@ -10,16 +10,19 @@ namespace booksApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ContriesController : ControllerBase
+    public class CountriesRepository : ControllerBase
     {
+        /// <summary>
+        /// Inject the repository interface using the constructor.
+        /// </summary>
         private ICountryRepository _contryRepository;
-
-        public ContriesController(ICountryRepository contryRepository)
+        
+        public CountriesRepository(ICountryRepository contryRepository)
         {
             _contryRepository = contryRepository;
         }
 
-        //return all the countries  at //api/countries
+        //return all the countries  at /api/countries
         [HttpGet]
         public IActionResult GetCountries()
         {
@@ -27,7 +30,7 @@ namespace booksApi.Controllers
             return Ok(countries);
         }
 
-
+       
         
     }
 }

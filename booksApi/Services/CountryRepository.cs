@@ -15,7 +15,7 @@ namespace booksApi.Services
             _countryContext = countryContext;
         }
 
-        // validation code 
+        // Input validation code 
         public bool CountryExist(int countryid)
         {
             return _countryContext.Countries.Any(c => c.Id == countryid);
@@ -40,5 +40,6 @@ namespace booksApi.Services
         {
             return _countryContext.Authors.Where(a => a.Id == authorId).Select(c => c.Country).FirstOrDefault();
         }
+
     }
 }

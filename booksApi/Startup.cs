@@ -24,7 +24,7 @@ namespace booksApi
             //var connectionstring = Configuration["ConnectionStrings:bookDbConnectionString"];
 
             services.AddDbContext<BookDbContext>(options =>
-                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BookApiProject;Trusted_Connection=True;"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<ICountryRepository, CountryRepository>();
         }
@@ -37,7 +37,7 @@ namespace booksApi
                 app.UseDeveloperExceptionPage();
             }
 
-            //context.SeedDataContext()
+            context.SeedDataContext();
             app.UseMvcWithDefaultRoute();
             app.UseMvc();
 

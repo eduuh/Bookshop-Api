@@ -10,7 +10,7 @@ using System.IO;
 namespace booksApi.Services
 {
     public class BookDbContextFactory : IDesignTimeDbContextFactory<BookDbContext>
-    {
+   { 
 
         private static IConfiguration configuration { get; set; }
         
