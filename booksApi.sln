@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29311.281
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "booksApi", "booksApi\booksApi.csproj", "{1BFE2032-E6E3-48CA-BE93-87911DA4A809}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BookApiSqlDatabase", "BookApiSqlDatabase\BookApiSqlDatabase.sqlproj", "{B4B471B0-AF92-4BB2-9F00-A34A648366B1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +15,6 @@ Global
 		{1BFE2032-E6E3-48CA-BE93-87911DA4A809}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BFE2032-E6E3-48CA-BE93-87911DA4A809}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BFE2032-E6E3-48CA-BE93-87911DA4A809}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4B471B0-AF92-4BB2-9F00-A34A648366B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4B471B0-AF92-4BB2-9F00-A34A648366B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4B471B0-AF92-4BB2-9F00-A34A648366B1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{B4B471B0-AF92-4BB2-9F00-A34A648366B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4B471B0-AF92-4BB2-9F00-A34A648366B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4B471B0-AF92-4BB2-9F00-A34A648366B1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
