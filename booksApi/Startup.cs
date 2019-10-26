@@ -37,7 +37,7 @@ namespace booksApi
         app.UseDeveloperExceptionPage();
       }
 
-      context.SeedDataContext();
+      //context.SeedDataContext();
       app.UseMvcWithDefaultRoute();
       app.UseMvc();
 
