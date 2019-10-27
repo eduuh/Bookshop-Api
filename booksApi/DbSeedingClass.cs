@@ -51,7 +51,7 @@ namespace booksApi
                     {
                         FirstName = "Jack",
                         Lastname = "London",
-                        Country = new Reviewer()
+                        Country = new Country()
                         {
                             Name = "USA"
                         }
@@ -82,7 +82,7 @@ namespace booksApi
                     {
                         FirstName = "Karl",
                         Lastname = "May",
-                        Country = new Reviewer()
+                        Country = new Country()
                         {
                             Name = "Germany"
                         }
@@ -114,7 +114,7 @@ namespace booksApi
                     {
                         FirstName = "Pavol",
                         Lastname = "Almasi",
-                        Country = new Reviewer()
+                        Country = new Country()
                         {
                             Name = "Slovakia"
                         }
@@ -137,7 +137,7 @@ namespace booksApi
                     {
                         FirstName = "Alexander",
                         Lastname = "Dumas",
-                        Country = new Reviewer()
+                        Country = new Country()
                         {
                             Name = "France"
                         }
@@ -174,7 +174,7 @@ namespace booksApi
                     {
                         FirstName = "Anita",
                         Lastname = "Powers",
-                        Country = new Reviewer()
+                        Country = new Country()
                         {
                             Name = "Canada"
                         }

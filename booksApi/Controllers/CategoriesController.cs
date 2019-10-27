@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Data.Common;
+using System.Collections.ObjectModel;
 using booksApi.Dtos;
 using booksApi.Models;
 using booksApi.Services;
@@ -57,25 +58,14 @@ namespace booksApi.Controllers
       };
       return Ok(categoryDto);
     }
-    [HttpGet("book/{categoryid}")]
-    [ProducesResponseType(200,Type= typeof(ICollection<Book>))]
-    [ProducesResponseType(400)]
-    public IActionResult GetAllBookForCategory(int categoryid)
-    {
-       if(!_categoryRepostiory.CategoryExists(categoryid)) return NotFound();
-      var books = _categoryRepostiory.GetAllBooksForCategory(categoryid);
-      if (!ModelState.IsValid) return BadRequest(ModelState);
-    //   var colbooks = new ICollection<BookDbo>{
-    //   }
-      return Ok(books);
-    }
-    [HttpGet("book/{bookid}")]
+
+    [HttpGet("book/{bookid}/categories")]
     [ProducesResponseType(200,Type= typeof(ICollection<Book>))]
     [ProducesResponseType(400)]
     public IActionResult GetAllCategoriesForBook(int bookid){
       if(!ModelState.IsValid) return BadRequest();
       var categories = _categoryRepostiory.GetAllCategoriesForABook(bookid);
-      // TODO Check for null for books
+      //Todo validate if book exist
       var categoriesdtos = new Collection<CategoryDto>();
       foreach (var category in categories)
       {
@@ -86,6 +76,33 @@ namespace booksApi.Controllers
         });
       }
       return Ok(categoriesdtos);
+    }
+    //   Getallbooksforcategory
+    //api/countries/categoryId/books
+    [HttpGet("{categoryid}/books")]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(404)]
+    [ProducesResponseType(200, Type = typeof(BookDto))]
+    public IActionResult GetAllBooksForCategory(int categoryid)
+    {
+      if (!_categoryRepostiory.CategoryExists(categoryid)) return NotFound();
+      var books = _categoryRepostiory.GetAllBooksForCategory(categoryid);
+     
+      if (!ModelState.IsValid)
+        return BadRequest(ModelState);
+      var bookDtos = new List<BookDto>();
+
+      foreach (var book in books)
+      {
+        bookDtos.Add(new BookDto
+        {
+          Id = book.Id,
+          Title = book.Title,
+          Isbn = book.isbn,
+          DatePublished = book.DatePublished
+        });
+      }
+      return Ok(bookDtos);
     }
   }
 }

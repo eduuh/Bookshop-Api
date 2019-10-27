@@ -8,9 +8,9 @@ namespace booksApi.Services
 {
     public interface ICountry
     {
-        ICollection<Reviewer> GetCountries();
-        Reviewer GetCountry(int countryId);
-        Reviewer GetCountryOfAnAuthor(int authorId);
+        ICollection<Country> GetCountries();
+        Country GetCountry(int countryId);
+        Country GetCountryOfAnAuthor(int authorId);
         ICollection<Author> GetAuthorFromCountry(int countryId);
         bool CountryExist(int countryid);
     }

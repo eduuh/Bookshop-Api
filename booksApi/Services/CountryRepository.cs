@@ -26,17 +26,17 @@ namespace booksApi.Services
             return _countryContext.Authors.Where(c => c.Country.Id == countryId).ToList();
         }
 
-        public ICollection<Reviewer> GetCountries()
+        public ICollection<Country> GetCountries()
         {
             return _countryContext.Countries.OrderBy(c => c.Name).ToList();
         }
 
-        public Reviewer GetCountry(int countryId)
+        public Country GetCountry(int countryId)
         {
             return _countryContext.Countries.FirstOrDefault(c => c.Id == countryId);
         }
 
-        public Reviewer GetCountryOfAnAuthor(int authorId)
+        public Country GetCountryOfAnAuthor(int authorId)
         {
             return _countryContext.Authors.Where(a => a.Id == authorId).Select(c => c.Country).FirstOrDefault();
         }

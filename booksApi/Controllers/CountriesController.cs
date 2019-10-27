@@ -74,6 +74,30 @@ namespace booksApi.Controllers
       };
       return Ok(countryDto);
     }
-    // Todo  - Get authors from a country
+    //   Get authors from a country
+    //api/countries/countryId/authors
+    [HttpGet("{countryid}/authors")]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(404)]
+    [ProducesResponseType(200, Type = typeof(CountryDto))]
+    public IActionResult GetAuthorsFromACountry(int countryid){
+     if(!_countryRepository.CountryExist(countryid)) return NotFound();
+      var authors = _countryRepository.GetAuthorFromCountry(countryid);
+
+      if(!ModelState.IsValid)
+        return BadRequest(ModelState);
+      var authorsDtos = new List<AuthorDto>();
+
+      foreach (var author in authors)
+      {
+        authorsDtos.Add(new AuthorDto
+        {
+          Id = author.Id,
+          Firstname = author.FirstName,
+          Lastname = author.Lastname
+        });
+      }
+      return Ok(authorsDtos);
+    }
   }
 }
