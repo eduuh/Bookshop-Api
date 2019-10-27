@@ -6,7 +6,7 @@ using booksApi.Models;
 
 namespace booksApi.Services
 {
-    public interface ICountryRepository
+    public interface ICountry
     {
         ICollection<Country> GetCountries();
         Country GetCountry(int countryId);

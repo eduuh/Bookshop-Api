@@ -26,7 +26,8 @@ namespace booksApi
       services.AddDbContext<BookDbContext>(options =>
                 options.UseSqlServer(DefaultConnection));
 
-      services.AddScoped<ICountryRepository, CountryRepository>();
+      services.AddScoped<ICountry, CountryRepository>();
+      services.AddScoped<ICategory, CategoriesRepository>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

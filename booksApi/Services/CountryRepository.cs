@@ -6,7 +6,7 @@ using booksApi.Models;
 
 namespace booksApi.Services
 {
-    public class CountryRepository : ICountryRepository
+    public class CountryRepository : ICountry
     {
         private BookDbContext _countryContext;
 
