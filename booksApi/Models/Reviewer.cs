@@ -21,6 +21,5 @@ namespace booksApi.Models
         [StringLength(200, ErrorMessage = "The LastName should not exceed 200 characters")]
         public string Lastname { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
-
     }
 }

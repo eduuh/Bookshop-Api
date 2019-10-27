@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace booksApi.Models
 {
-    public class Country
+    public class Reviewer
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

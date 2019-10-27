@@ -20,7 +20,7 @@ namespace booksApi.Models
         [Required]
         [MaxLength(100,ErrorMessage ="Lastname Cannot be more than 100 characters")]
         public string Lastname { get; set; }
-        public virtual Country Country { get; set; }
+        public virtual Reviewer Country { get; set; }
         public virtual ICollection<BookAuthor> BookAuthors { get; set; }
     }
 }
