@@ -45,7 +45,6 @@ namespace booksApi.Controllers
     {
       if (!_countryRepository.CountryExist(countryId))
         return NotFound();
-
       var country = _countryRepository.GetCountry(countryId);
       if (!ModelState.IsValid) return BadRequest(ModelState);
       var countryDto = new CountryDto
@@ -53,7 +52,6 @@ namespace booksApi.Controllers
         Id = country.Id,
         Name = country.Name
       };
-
       return Ok(countryDto);
     }
     //api/countries/authors/authorId

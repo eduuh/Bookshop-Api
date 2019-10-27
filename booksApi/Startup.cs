@@ -28,6 +28,7 @@ namespace booksApi
 
       services.AddScoped<ICountry, CountryRepository>();
       services.AddScoped<ICategory, CategoriesRepository>();
+      services.AddScoped<IReviewer, ReviewerRepository>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
