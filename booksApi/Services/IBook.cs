@@ -8,11 +8,9 @@ namespace booksApi.Services
     ICollection<Book> GetBooks();
     Book GetBook(int bookid);
     Book GetBook(string isbn);
-    bool IsDuplicateISbn(string isbn);
-
-    decimal GetBookRating();
-    ICollection<Author> GetAuthorsOfABook(int bookid);
-    ICollection<Book> GetBooksByAuthor(int authorid);
+    decimal GetBookRating(int bookid);
     bool BookExist(int bookid);
+    bool BookExist(string isbn);
+    bool IsDuplicateISbn(string isbn,string bookisbn);
   }
 }
