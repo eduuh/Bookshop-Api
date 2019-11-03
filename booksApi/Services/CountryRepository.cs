@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using booksApi.Models;
 
 namespace booksApi.Services
 {
-    public class CountryRepository : ICountry
+  public class CountryRepository : ICountry
     {
         private BookDbContext _countryContext;
 
