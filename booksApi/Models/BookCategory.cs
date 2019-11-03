@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace booksApi.Models
+﻿namespace booksApi.Models
 {
-    public class BookCategory
+  public class BookCategory
     {
         public int BooKId { get; set; }
         public Book Book { get; set; }

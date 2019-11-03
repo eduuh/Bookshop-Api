@@ -1,13 +1,9 @@
-﻿using System.Data.Common;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using booksApi.Dtos;
 using booksApi.Models;
 using booksApi.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace booksApi.Controllers
 {

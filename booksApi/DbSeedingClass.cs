@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using booksApi.Models;
 using booksApi.Services;
 
 namespace booksApi
 {
-    public static class DbSeedingClass
+  public static class DbSeedingClass
     {
         //Extension method
         public static void SeedDataContext(this BookDbContext context)

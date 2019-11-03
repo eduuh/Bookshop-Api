@@ -1,12 +1,10 @@
 ﻿using booksApi.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace booksApi.Services
 {
-    public class CategoriesRepository : ICategory
+  public class CategoriesRepository : ICategory
     {
         private BookDbContext _context;
         public CategoriesRepository(BookDbContext bookcontext)

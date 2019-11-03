@@ -1,6 +1,5 @@
 using booksApi.Services;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,6 +28,8 @@ namespace booksApi
       services.AddScoped<ICountry, CountryRepository>();
       services.AddScoped<ICategory, CategoriesRepository>();
       services.AddScoped<IReviewer, ReviewerRepository>();
+      services.AddScoped<IAuthor, AuthorRepository>();
+      services.AddScoped<IBook, BookRepository>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,7 +40,7 @@ namespace booksApi
         app.UseDeveloperExceptionPage();
       }
 
-      //context.SeedDataContext();
+     //context.SeedDataContext();
       app.UseMvcWithDefaultRoute();
       app.UseMvc();
 
