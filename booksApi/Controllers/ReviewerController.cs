@@ -37,7 +37,8 @@ namespace booksApi.Controllers
      
     [HttpGet("{reviewerid}")]
     [ProducesResponseType(400)]
-    [ProducesResponseType(200, Type = typeof(IEnumerable<Reviewer>))]
+    [ProducesResponseType(404)]
+    [ProducesResponseType(200, Type = typeof(Reviewer))]
     public IActionResult GetReviewer(int reviewerid){
      if(!_ireviewerRepository.ReviewerExist(reviewerid)) return NotFound();
 
@@ -51,12 +52,29 @@ namespace booksApi.Controllers
       return Ok(reviewerdto);
     }
 
-//    [HttpGet]
-//    public IActionResult GetReviewerofAReview(int review){
-//        //Todo -> 
-//    }
-   
-   
+    [HttpGet("{id}/reviews")]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(404)]
+    [ProducesResponseType(200, Type = typeof(IEnumerable<Review>))]
+    public IActionResult GetReviewsByReviewer(int id)
+    {
+      if (!_ireviewerRepository.ReviewerExist(id)) return NotFound();
+      var reviews = _ireviewerRepository.GetReviewsByReviewer(id);
+      return Ok(reviews);
+    }
+
+    [HttpGet("{id}/reviewer")]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(404)]
+    [ProducesResponseType(200, Type = typeof(IEnumerable<Reviewer>))]
+    public IActionResult GetReviewerOfAReview(int id)
+    {
+      if (!_ireviewerRepository.ReviewerExist(id)) return NotFound();
+      var reviewer = _ireviewerRepository.GetReviewerOfAReview(id);
+      return Ok(reviewer);
+    }
+
+
 
 
   }
