@@ -60,6 +60,15 @@ namespace booksApi.Controllers
     {
       if (!_ireviewerRepository.ReviewerExist(id)) return NotFound();
       var reviews = _ireviewerRepository.GetReviewsByReviewer(id);
+      var reviewsdto = new List<ReviewDto>();
+      foreach (var review in reviews)
+      {
+        reviewsdto.Add(new ReviewDto{
+          Id = review.Id,
+          HeadLine = review.HeadLine,
+          Rating = review.Ratings
+        } );
+      }
       return Ok(reviews);
     }
 
@@ -71,7 +80,13 @@ namespace booksApi.Controllers
     {
       if (!_ireviewerRepository.ReviewerExist(id)) return NotFound();
       var reviewer = _ireviewerRepository.GetReviewerOfAReview(id);
-      return Ok(reviewer);
+      var reviewerdto = new  ReviewerDto{
+        Id = reviewer.Id,
+        Firstname = reviewer.Firstname,
+        Lastname = reviewer.Lastname
+      };
+     
+      return Ok(reviewerdto);
     }
 
 
