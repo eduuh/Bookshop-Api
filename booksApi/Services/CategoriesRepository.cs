@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace booksApi.Services
 {
-  public class CategoriesRepository : ICategory
+    public class CategoriesRepository : ICategory
     {
-        private BookDbContext _context;
+        private readonly BookDbContext _context;
         public CategoriesRepository(BookDbContext bookcontext)
         {
             _context = bookcontext;
         }
-       
+
         public bool CategoryExists(int categoryId)
         {
             return _context.Categories.Any(c => c.Id == categoryId);
@@ -26,11 +26,11 @@ namespace booksApi.Services
         }
         public ICollection<Category> GetAllCategoriesForABook(int bookid)
         {
-            return _context.BookCategories.Where(b =>b.BooKId==bookid).Select(c =>c.Category).ToList();
+            return _context.BookCategories.Where(b => b.BooKId == bookid).Select(c => c.Category).ToList();
         }
         public ICollection<Book> GetAllBooksForCategory(int categoryid)
         {
             return _context.BookCategories.Where(c => c.CategoryId == categoryid).Select(b => b.Book).ToList();
         }
-  }
+    }
 }

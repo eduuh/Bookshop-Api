@@ -5,7 +5,7 @@ using booksApi.Services;
 
 namespace booksApi
 {
-  public static class DbSeedingClass
+    public static class DbSeedingClass
     {
         //Extension method
         public static void SeedDataContext(this BookDbContext context)
@@ -16,7 +16,7 @@ namespace booksApi
                 {
                     Book = new Book()
                     {
-                        isbn = "123",
+                        Isbn = "123",
                         Title = "The Call Of The Wild",
                         DatePublished = new DateTime(1903, 1, 1),
                         BookCategories = new List<BookCategory>()
@@ -59,7 +59,7 @@ namespace booksApi
                 {
                     Book = new Book()
                     {
-                        isbn = "1234",
+                        Isbn = "1234",
                         Title = "Winnetou",
                         DatePublished = new DateTime(1878, 10, 1),
                         BookCategories = new List<BookCategory>()
@@ -90,7 +90,7 @@ namespace booksApi
                 {
                     Book = new Book()
                     {
-                        isbn = "12345",
+                        Isbn = "12345",
                         Title = "Pavols Best Book",
                         DatePublished = new DateTime(2019, 2, 2),
                         BookCategories = new List<BookCategory>()
@@ -122,7 +122,7 @@ namespace booksApi
                 {
                     Book = new Book()
                     {
-                        isbn = "123456",
+                        Isbn = "123456",
                         Title = "Three Musketeers",
                         DatePublished = new DateTime(2019, 2, 2),
                         BookCategories = new List<BookCategory>()
@@ -145,7 +145,7 @@ namespace booksApi
                 {
                     Book = new Book()
                     {
-                        isbn = "1234567",
+                        Isbn = "1234567",
                         Title = "Big Romantic Book",
                         DatePublished = new DateTime(1879, 3, 2),
                         BookCategories = new List<BookCategory>()
