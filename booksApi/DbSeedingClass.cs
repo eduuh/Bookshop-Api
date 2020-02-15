@@ -8,7 +8,7 @@ namespace booksApi
     public static class DbSeedingClass
     {
         //Extension method
-        public static void SeedDataContext(this BookDbContext context)
+        public static void SeedBooks(this BookDbContext context)
         {
             var booksAuthors = new List<BookAuthor>()
             {

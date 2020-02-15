@@ -11,6 +11,13 @@ namespace booksApi
     public class Startup
     {
         public static IConfiguration Configuration { get; set; }
+        private static readonly string _connStr = @"
+                                            Server=127.0.0.1,1401;
+                                            Database=books;
+                                            User Id=sa;
+                                            Password=YourSTRONG!Passw0rd
+                                            ";
+
         public Startup(IConfiguration configurations)
         {
             Configuration = configurations;
@@ -20,9 +27,9 @@ namespace booksApi
             services.AddControllers();
 
             //var connectionstring = Configuration["ConnectionStrings:bookDbConnectionString"];
-            var DefaultConnection = "Server=(localdb)\\MSSQLLocalDB;Database=booksdb;Trusted_Connection=True;MultipleActiveResultSets=true;";
+
             services.AddDbContext<BookDbContext>(options =>
-                      options.UseSqlServer(DefaultConnection));
+                      options.UseSqlServer(_connStr));
 
             services.AddScoped<ICountry, CountryRepository>();
             services.AddScoped<ICategory, CategoriesRepository>();

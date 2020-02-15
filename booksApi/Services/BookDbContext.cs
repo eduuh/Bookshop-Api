@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace booksApi.Services
 {
-  public class BookDbContext  : DbContext
+    public class BookDbContext : DbContext
     {
         public BookDbContext()
         {
 
         }
-        public BookDbContext(DbContextOptions<BookDbContext> options): base(options)
+        public BookDbContext(DbContextOptions<BookDbContext> options) : base(options)
         {
-            Database.Migrate();
+
         }
 
         public virtual DbSet<Book> Books { get; set; }
@@ -37,9 +37,9 @@ namespace booksApi.Services
             modelBuilder.Entity<BookCategory>()
               .HasOne(c => c.Category)
               .WithMany(bc => bc.BookCategories)
-              .HasForeignKey(c =>c.CategoryId);
+              .HasForeignKey(c => c.CategoryId);
 
-              // Establish keys
+            // Establish keys
             modelBuilder.Entity<BookAuthor>()
                 .HasKey(ba => new { ba.BookId, ba.AuthorId });
             modelBuilder.Entity<BookAuthor>()
